@@ -3,15 +3,19 @@
 
 ## Specify the Truffle version and OpenZeppelin version used in the project.
 Truffle: v5.3.7
+
 OpenZeppelin: 4.1.0
+
 Solidity: 0.8.4
 
-## Your ERC-721 Token Name
+
+## ERC-721 Token Name
 STAR NOTARY
 
-## Your ERC-721 Token Symbol
+## ERC-721 Token Symbol
 STR
 
-## Your “Token Address” on the Rinkeby Network
+## “Token Address” on the Rinkeby Network
 Contract Address: 0x310546F9A522C64A54599Ea385A33072A444C378
+
 Token: https://rinkeby.etherscan.io/token/0x310546f9a522c64a54599ea385a33072a444c378
