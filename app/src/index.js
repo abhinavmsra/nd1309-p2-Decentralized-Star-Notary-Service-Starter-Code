@@ -13,10 +13,7 @@ const App = {
       // get contract instance
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = starNotaryArtifact.networks[networkId];
-      this.meta = new web3.eth.Contract(
-        starNotaryArtifact.abi,
-        deployedNetwork.address,
-      );
+      this.meta = new web3.eth.Contract(starNotaryArtifact.abi, deployedNetwork.address);
 
       // get accounts
       const accounts = await web3.eth.getAccounts();
@@ -40,7 +37,7 @@ const App = {
   },
 
   // Implement Task 4 Modify the front end of the DAPP
-  lookUp: async function (){
+  lookUp: async function () {
     const { lookUptokenIdToStarInfo } = this.meta.methods;
     const { value } = document.querySelector('#lookid');
     const name = await lookUptokenIdToStarInfo(value).call();

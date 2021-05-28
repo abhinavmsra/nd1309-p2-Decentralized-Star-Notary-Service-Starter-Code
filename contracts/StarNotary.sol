@@ -70,6 +70,7 @@ contract StarNotary is ERC721 {
             "You must own one of the tokens"
         );
 
+        // Uses `_transfer` to bypass all restrictions on msg.sender.
         _transfer(ownerOfTokenId1, ownerOfTokenId2, _tokenId1);
         _transfer(ownerOfTokenId2, ownerOfTokenId1, _tokenId2);
     }
@@ -78,6 +79,10 @@ contract StarNotary is ERC721 {
     function transferStar(address _to1, uint256 _tokenId) public {
         //1. Check if the sender is the ownerOf(_tokenId)
         //2. Use the transferFrom(from, to, tokenId); function to transfer the Star
+
+        // transferFrom already imposes restrictions on msg.sender.
+        //  require(_isApprovedOrOwner(_msgSender(), tokenId), "ERC721: transfer caller is not owner nor approved");
+        // Hence, directly calling `transferFrom` without checking ownerOf
         transferFrom(msg.sender, _to1, _tokenId);
     }
 }
